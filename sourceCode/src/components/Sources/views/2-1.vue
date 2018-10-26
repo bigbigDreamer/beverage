@@ -3,7 +3,11 @@
       <div>
         <Row>
           <Col>
-            <Table :columns="columns" :data="data" border></Table>
+            <Divider type="vertical"/>
+            <a href="#" @click="unDo" style="font-size: 14px">注销</a>
+          </Col>
+          <Col>
+            <Table :columns="columns" :data="data" border @on-select = 'handleSelect'></Table>
           </Col>
         </Row>
       </div>
@@ -16,6 +20,9 @@
       data () {
         return {
           columns: [
+            {
+              type: 'selection',
+            },
             {
               title: 'ID',
               key: 'id'
@@ -45,11 +52,38 @@
               telephone: '110',
               isvalidate:'1'
             },
-          ]
+          ],
+          idArr:[],
         }
     },
       methods:{
-
+        /**
+         * @time  2018/10/26 17:12
+         * @author  Bill Wang <1826001146@qq.com>
+         * @desc  处理表格选中某一项的数据
+         */
+        handleSelect(collection){
+            this.idArr = collection.map(item => item.id);
+            console.log(this.idArr);
+        },
+        unDo(){
+          this.$http.post('/shopper/deleteShoppers.action',{
+            id:this.idArr,
+          })
+            .then((data)=>{
+              console.log(data);
+              this.$http.post('/shopper/showAll.action')
+                .then((data)=>{
+                  this.data = data.data;
+                })
+                .catch((err)=>{
+                  console.log(err);
+                });
+            })
+            .catch((err)=>{
+              console.log(err);
+            })
+        },
       },
       mounted(){
         /**
@@ -59,7 +93,6 @@
          */
           this.$http.post('/shopper/showAll.action')
             .then((data)=>{
-              console.log(data);
               this.data = data.data;
             })
             .catch((err)=>{

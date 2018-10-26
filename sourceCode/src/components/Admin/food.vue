@@ -1,74 +1,14 @@
 <template>
      <div>
-       <Row>
-         <Col span="6">
-           <Card style="width:250px">
-             <div style="text-align:center">
-               <img src="https://icarusion.gitee.io/iview/2ecd3b0452aa197097d5131afacab7b8.png">
-               <h3>一份美味的食品等待您的品尝</h3>
-             </div>
-           </Card>
-         </Col>
-         <Col span="6">
-           <Card style="width:250px">
-             <div style="text-align:center">
-               <img src="https://icarusion.gitee.io/iview/2ecd3b0452aa197097d5131afacab7b8.png">
-               <h3>一份美味的食品等待您的品尝</h3>
-             </div>
-           </Card>
-         </Col>
-         <Col span="6">
-           <Card style="width:250px">
-             <div style="text-align:center">
-               <img src="https://icarusion.gitee.io/iview/2ecd3b0452aa197097d5131afacab7b8.png">
-               <h3>一份美味的食品等待您的品尝</h3>
-             </div>
-           </Card>
-         </Col>
-         <Col span="6">
-           <Card style="width:250px">
-             <div style="text-align:center">
-               <img src="https://icarusion.gitee.io/iview/2ecd3b0452aa197097d5131afacab7b8.png">
-               <h3>一份美味的食品等待您的品尝</h3>
-             </div>
-           </Card>
-         </Col>
-       </Row>
-       <br>
-       <Row>
-         <Col span="6">
-           <Card style="width:250px">
-             <div style="text-align:center">
-               <img src="https://icarusion.gitee.io/iview/2ecd3b0452aa197097d5131afacab7b8.png">
-               <h3>一份美味的食品等待您的品尝</h3>
-             </div>
-           </Card>
-         </Col>
-         <Col span="6">
-           <Card style="width:250px">
-             <div style="text-align:center">
-               <img src="https://icarusion.gitee.io/iview/2ecd3b0452aa197097d5131afacab7b8.png">
-               <h3>一份美味的食品等待您的品尝</h3>
-             </div>
-           </Card>
-         </Col>
-         <Col span="6">
-           <Card style="width:250px">
-             <div style="text-align:center">
-               <img src="https://icarusion.gitee.io/iview/2ecd3b0452aa197097d5131afacab7b8.png">
-               <h3>一份美味的食品等待您的品尝</h3>
-             </div>
-           </Card>
-         </Col>
-         <Col span="6">
-           <Card style="width:250px">
-             <div style="text-align:center">
-               <img src="https://icarusion.gitee.io/iview/2ecd3b0452aa197097d5131afacab7b8.png">
-               <h3>一份美味的食品等待您的品尝</h3>
-             </div>
-           </Card>
-         </Col>
-       </Row>
+        <Row>
+          <Col push="10">
+            <Upload
+              multiple
+              action="/test/uploadPic.action" name="myFile">
+              <Button icon="ios-cloud-upload-outline">Upload files</Button>
+            </Upload>
+          </Col>
+        </Row>
      </div>
 </template>
 
